@@ -28,11 +28,19 @@ The examples in this guide assume the following metrics flags are present:
 
 ```sh
 --metrics 127.0.0.1:9001
-Consensus layer
+```
+
+### Consensus layer
+
+```sh
 --metrics 127.0.0.1:29000
-Verify metrics endpoints
+```
+
+## Verify metrics endpoints
+
 Before deploying Prometheus and Grafana, verify that both metrics endpoints are
 reachable on the host.
+
 
 The execution layer exposes metrics at /:
 
