@@ -56,19 +56,19 @@ pub struct HttpCommitCertificate {
 impl HttpCommitCertificate {
     /// Convert wire JSON into a [`CommitCertificate`].
     pub fn try_into_commit_certificate(self) -> eyre::Result<CommitCertificate<ArcContext>> {
-        let signatures: eyre::Result<Vec<CommitSignature<ArcContext>>> = self
-            .signatures
-            .into_iter()
-            .map(|sig| {
-                let sig_bytes: [u8; 64] = sig.signature.try_into().map_err(|v: Vec<u8>| {
-                    eyre::eyre!("Invalid signature length: {}", v.len())
-                })?;
-                Ok(CommitSignature {
-                    address: sig.address,
-                    signature: Signature::from_bytes(sig_bytes),
+        let signatures: eyre::Result<Vec<CommitSignature<ArcContext>>> =
+            self.signatures
+                .into_iter()
+                .map(|sig| {
+                    let sig_bytes: [u8; 64] = sig.signature.try_into().map_err(|v: Vec<u8>| {
+                        eyre::eyre!("Invalid signature length: {}", v.len())
+                    })?;
+                    Ok(CommitSignature {
+                        address: sig.address,
+                        signature: Signature::from_bytes(sig_bytes),
+                    })
                 })
-            })
-            .collect();
+                .collect();
 
         let round_u32: u32 = self.round.try_into().map_err(|e| {
             eyre::eyre!(
