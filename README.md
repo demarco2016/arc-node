@@ -11,7 +11,11 @@
 
 <p align="center">
   <a href="https://www.arc.network/"><img src="https://img.shields.io/badge/Website-arc.network-blue" alt="Website"></a>
+  <a href="https://x.com/Demarco639"><img src="https://img.shields.io/twitter/follow/Demarco639?style=social" alt="X Follow"></a>
 </p>
+
+> **Fork maintained by [@demarco2016](https://github.com/demarco2016).**  
+> Related: [arc-fixes](https://github.com/demarco2016/arc-fixes) — Unified Balance Kit patterns.
 
 > [!IMPORTANT]
 > Arc is currently in testnet, and this is alpha software currently undergoing audits.
